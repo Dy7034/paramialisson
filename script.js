@@ -1,77 +1,24 @@
 // ============================================
-// NUESTRO PEQUEÑO MUNDO - LÓGICA v2.1
+// NUESTRO PEQUEÑO MUNDO - LÓGICA v3.0
 // Para Alisson - Con todo mi amor
-// ============================================
-
-// ============================================
-// CONFIGURACIÓN
 // ============================================
 
 const CONFIG = {
     startDate: new Date('2026-04-12T00:00:00'),
     birthdayDate: new Date('2026-08-26T00:00:00'),
-    musicUrl: 'https://drive.google.com/uc?export=download&id=1y5QXLSzqNH92hNQa6oi6BxwYV5xjJNX4',
-    musicTitle: 'Colgando en tus manos',
-    musicArtist: 'Carlos Baute & Marta Sánchez',
     
-    // 🎨 GALERÍA CON DESCRIPCIONES ROMÁNTICAS GENÉRICAS
-    // (Apliquen a cualquier foto, no importa cuál sea)
     galleryImages: [
-        {
-            url: 'https://i.imgur.com/SMMGWu9.jpg',
-            title: 'Contigo, todo es mejor',
-            description: 'Cada momento a tu lado se convierte en mi recuerdo favorito'
-        },
-        {
-            url: 'https://i.imgur.com/EuSVvfJ.jpg',
-            title: 'Mi persona favorita',
-            description: 'No importa dónde ni cuándo, mientras sea contigo'
-        },
-        {
-            url: 'https://i.imgur.com/7AH5MaT.jpg',
-            title: 'Sonrisas que enamoran',
-            description: 'Tu sonrisa es lo más bonito que mis ojos han visto'
-        },
-        {
-            url: 'https://i.imgur.com/thv7LGX.jpg',
-            title: 'Juntos para siempre',
-            description: 'Así me imagino el resto de mi vida, siempre a tu lado'
-        },
-        {
-            url: 'https://i.imgur.com/LRY1iG6.jpg',
-            title: 'Eres tú, simplemente tú',
-            description: 'Lo que me enamora no son las fotos, sino la mujer que sale en ellas'
-        },
-        {
-            url: 'https://i.imgur.com/q8c7kFk.jpg',
-            title: 'Mi lugar favorito',
-            description: 'No es un sitio, eres tú. Contigo en cualquier lugar estoy bien'
-        },
-        {
-            url: 'https://i.imgur.com/BHgx73N.jpg',
-            title: 'Recuerdos eternos',
-            description: 'Momentos como estos son los que guardaré por siempre'
-        },
-        {
-            url: 'https://i.imgur.com/7yL8zXZ.jpg',
-            title: 'Mi niña hermosa',
-            description: 'Cada día te veo más bonita, ¿cómo es posible?'
-        },
-        {
-            url: 'https://i.imgur.com/nAd02cU.jpg',
-            title: 'Aventuras de nosotros',
-            description: 'Las mejores aventuras son las que vivo contigo'
-        },
-        {
-            url: 'https://i.imgur.com/x0kP7iI.jpg',
-            title: 'Mi amor, mi vida',
-            description: 'Te amo más de lo que estas fotos pueden expresar'
-        },
-        {
-            url: 'https://i.imgur.com/lqQtIHe.jpg',
-            title: 'Por muchos más momentos',
-            description: 'Esto apenas comienza, mi niña. Lo mejor está por venir'
-        }
+        { url: 'https://i.imgur.com/SMMGWu9.jpg', title: 'Contigo, todo es mejor', description: 'Cada momento a tu lado se convierte en mi recuerdo favorito' },
+        { url: 'https://i.imgur.com/EuSVvfJ.jpg', title: 'Mi persona favorita', description: 'No importa dónde ni cuándo, mientras sea contigo' },
+        { url: 'https://i.imgur.com/7AH5MaT.jpg', title: 'Sonrisas que enamoran', description: 'Tu sonrisa es lo más bonito que mis ojos han visto' },
+        { url: 'https://i.imgur.com/thv7LGX.jpg', title: 'Juntos para siempre', description: 'Así me imagino el resto de mi vida, siempre a tu lado' },
+        { url: 'https://i.imgur.com/LRY1iG6.jpg', title: 'Eres tú, simplemente tú', description: 'Lo que me enamora no son las fotos, sino la mujer que sale en ellas' },
+        { url: 'https://i.imgur.com/q8c7kFk.jpg', title: 'Mi lugar favorito', description: 'No es un sitio, eres tú. Contigo en cualquier lugar estoy bien' },
+        { url: 'https://i.imgur.com/BHgx73N.jpg', title: 'Recuerdos eternos', description: 'Momentos como estos son los que guardaré por siempre' },
+        { url: 'https://i.imgur.com/7yL8zXZ.jpg', title: 'Mi niña hermosa', description: 'Cada día te veo más bonita, ¿cómo es posible?' },
+        { url: 'https://i.imgur.com/nAd02cU.jpg', title: 'Aventuras de nosotros', description: 'Las mejores aventuras son las que vivo contigo' },
+        { url: 'https://i.imgur.com/x0kP7iI.jpg', title: 'Mi amor, mi vida', description: 'Te amo más de lo que estas fotos pueden expresar' },
+        { url: 'https://i.imgur.com/lqQtIHe.jpg', title: 'Por muchos más momentos', description: 'Esto apenas comienza, mi niña. Lo mejor está por venir' }
     ],
     
     letterText: [
@@ -141,62 +88,16 @@ const CONFIG = {
         'Y 80 razones más que no caben aquí... ❤️'
     ],
     
-    // 🎮 QUIZ MEJORADO - Más personal y desafiante
     quizQuestions: [
-        {
-            question: '¿Qué animalito es tu favorito y siempre me lo recuerdas?',
-            options: ['Perros', 'Gatos', 'Conejos', 'Hamsters'],
-            correct: 1,
-            hint: 'Es independiente pero cariñoso, como tú 🐱'
-        },
-        {
-            question: '¿Cuál de estas frases digo más seguido?',
-            options: ['Hola preciosa', 'Amoor', 'Qué linda', 'Mi vida'],
-            correct: 1,
-            hint: 'Lo grito cada vez que te veo o te extraño 📢'
-        },
-        {
-            question: '¿Qué es lo primero que hago cuando hablamos?',
-            options: ['Te pregunto cómo estás', 'Te mando un beso', 'Te digo que te amo', 'Te cuento mi día'],
-            correct: 2,
-            hint: 'Lo más importante siempre va primero ❤️'
-        },
-        {
-            question: 'Si pudiera viajar contigo a cualquier lugar, ¿a dónde iríamos primero?',
-            options: ['La playa', 'La montaña', 'Un parque Disney', 'Otro país'],
-            correct: 2,
-            hint: 'Te encanta la magia, las princesas y Kuromi 🏰'
-        },
-        {
-            question: '¿Qué es lo que más me gusta hacer contigo?',
-            options: ['Ver películas', 'Jugar Crash', 'Abrazarnos', 'Todas las anteriores'],
-            correct: 3,
-            hint: 'Todo contigo es perfecto 💕'
-        },
-        {
-            question: '¿Cuál es mi mayor miedo respecto a ti?',
-            options: ['Perderte', 'Que seas infeliz', 'Cometer errores que te lastimen', 'No estar a tu altura'],
-            correct: 2,
-            hint: 'Me preocupa hacerte daño sin querer 💔'
-        },
-        {
-            question: '¿Qué canción me hace pensar inmediatamente en ti?',
-            options: ['Una cualquiera', 'Colgando en tus manos', 'Perfect', 'Todas las de amor'],
-            correct: 1,
-            hint: 'Es NUESTRA canción, la que suena aquí 🎵'
-        },
-        {
-            question: '¿Qué sueñas con ser en el futuro?',
-            options: ['Médica', 'Odontóloga', 'Ingeniera', 'Abogada'],
-            correct: 1,
-            hint: 'Vas a cuidar sonrisas y la mía será la primera 🦷✨'
-        },
-        {
-            question: '¿Por qué te amo?',
-            options: ['Por bonita', 'Por inteligente', 'Por cómo me tratas', 'Por todo, eres perfecta'],
-            correct: 3,
-            hint: 'No hay una sola razón, son millones 💖'
-        }
+        { question: '¿Qué animalito es tu favorito y siempre me lo recuerdas?', options: ['Perros', 'Gatos', 'Conejos', 'Hamsters'], correct: 1 },
+        { question: '¿Cuál de estas frases digo más seguido?', options: ['Hola preciosa', 'Amoor', 'Qué linda', 'Mi vida'], correct: 1 },
+        { question: '¿Qué es lo primero que hago cuando hablamos?', options: ['Te pregunto cómo estás', 'Te mando un beso', 'Te digo que te amo', 'Te cuento mi día'], correct: 2 },
+        { question: 'Si pudiera viajar contigo a cualquier lugar, ¿a dónde iríamos primero?', options: ['La playa', 'La montaña', 'Un parque Disney', 'Otro país'], correct: 2 },
+        { question: '¿Qué es lo que más me gusta hacer contigo?', options: ['Ver películas', 'Jugar Crash', 'Abrazarnos', 'Todas las anteriores'], correct: 3 },
+        { question: '¿Cuál es mi mayor miedo respecto a ti?', options: ['Perderte', 'Que seas infeliz', 'Cometer errores que te lastimen', 'No estar a tu altura'], correct: 2 },
+        { question: '¿Qué canción me hace pensar inmediatamente en ti?', options: ['Una cualquiera', 'Colgando en tus manos', 'Perfect', 'Todas las de amor'], correct: 1 },
+        { question: '¿Qué sueñas con ser en el futuro?', options: ['Médica', 'Odontóloga', 'Ingeniera', 'Abogada'], correct: 1 },
+        { question: '¿Por qué te amo?', options: ['Por bonita', 'Por inteligente', 'Por cómo me tratas', 'Por todo, eres perfecta'], correct: 3 }
     ],
     
     loaderMessages: [
@@ -217,12 +118,11 @@ const CONFIG = {
 
 let loaderProgress = 0;
 let currentMessageIndex = 0;
-const loaderMessages = CONFIG.loaderMessages;
 
 function updateLoaderMessage() {
     const messageEl = document.getElementById('loaderMessage');
-    if (currentMessageIndex < loaderMessages.length) {
-        messageEl.textContent = loaderMessages[currentMessageIndex];
+    if (currentMessageIndex < CONFIG.loaderMessages.length) {
+        messageEl.textContent = CONFIG.loaderMessages[currentMessageIndex];
         currentMessageIndex++;
     }
 }
@@ -245,8 +145,7 @@ function simulateLoader() {
         }
         bar.style.width = loaderProgress + '%';
         percent.textContent = Math.floor(loaderProgress) + '%';
-        
-        if (loaderProgress > (currentMessageIndex * (100 / loaderMessages.length))) {
+        if (loaderProgress > (currentMessageIndex * (100 / CONFIG.loaderMessages.length))) {
             updateLoaderMessage();
         }
     }, 200);
@@ -257,10 +156,6 @@ function showWelcomeScreen() {
     createPetals();
     createButterflies();
 }
-
-// ============================================
-// PETALS & BUTTERFLIES
-// ============================================
 
 function createPetals() {
     const container = document.getElementById('petalsContainer');
@@ -291,7 +186,7 @@ function createButterflies() {
 }
 
 // ============================================
-// CUSTOM CURSOR
+// CURSOR
 // ============================================
 
 const cursor = document.getElementById('cursor');
@@ -303,7 +198,6 @@ document.addEventListener('mousemove', (e) => {
     mouseY = e.clientY;
     cursor.style.left = mouseX + 'px';
     cursor.style.top = mouseY + 'px';
-    
     const x = (e.clientX / window.innerWidth - 0.5) * 15;
     const y = (e.clientY / window.innerHeight - 0.5) * 15;
     document.querySelectorAll('.light').forEach((light, i) => {
@@ -333,7 +227,7 @@ document.querySelectorAll('button, a, .gallery-item, .quiz-option').forEach(el =
 });
 
 // ============================================
-// PARTICLES CANVAS
+// PARTICLES
 // ============================================
 
 const canvas = document.getElementById('particlesCanvas');
@@ -348,9 +242,7 @@ resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
 
 class Particle {
-    constructor() {
-        this.reset();
-    }
+    constructor() { this.reset(); }
     reset() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
@@ -377,11 +269,7 @@ for (let i = 0; i < 50; i++) particles.push(new Particle());
 
 function animateParticles() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => {
-        p.update();
-        p.draw();
-    });
-    
+    particles.forEach(p => { p.update(); p.draw(); });
     for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
             const dx = particles[i].x - particles[j].x;
@@ -408,7 +296,6 @@ animateParticles();
 function updateCounter() {
     const now = new Date();
     const diff = now - CONFIG.startDate;
-    
     if (diff < 0) {
         document.getElementById('years').textContent = '0';
         document.getElementById('months').textContent = '0';
@@ -418,14 +305,12 @@ function updateCounter() {
         document.getElementById('seconds').textContent = '0';
         return;
     }
-    
     const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
     const months = Math.floor((diff % (1000 * 60 * 60 * 24 * 365.25)) / (1000 * 60 * 60 * 24 * 30.44));
     const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30.44)) / (1000 * 60 * 60 * 24));
     const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-    
     document.getElementById('years').textContent = years;
     document.getElementById('months').textContent = months;
     document.getElementById('days').textContent = days;
@@ -437,13 +322,8 @@ function updateCounter() {
 function updateBirthdayCountdown() {
     const now = new Date();
     let birthday = new Date(CONFIG.birthdayDate);
-    
-    if (now > birthday) {
-        birthday.setFullYear(birthday.getFullYear() + 1);
-    }
-    
+    if (now > birthday) birthday.setFullYear(birthday.getFullYear() + 1);
     const diff = birthday - now;
-    
     if (diff < 0) {
         document.getElementById('cd-days').textContent = '0';
         document.getElementById('cd-hours').textContent = '0';
@@ -451,12 +331,10 @@ function updateBirthdayCountdown() {
         document.getElementById('cd-seconds').textContent = '0';
         return;
     }
-    
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
     const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-    
     document.getElementById('cd-days').textContent = days;
     document.getElementById('cd-hours').textContent = hours;
     document.getElementById('cd-minutes').textContent = minutes;
@@ -469,8 +347,11 @@ updateCounter();
 updateBirthdayCountdown();
 
 // ============================================
-// START BUTTON
+// 🎵 MÚSICA - SOUNDCLOUD SIMPLIFICADO
 // ============================================
+
+let musicPlaying = false;
+let scWidget = null;
 
 document.getElementById('startBtn').addEventListener('click', () => {
     document.getElementById('welcomeScreen').classList.add('hidden');
@@ -478,120 +359,100 @@ document.getElementById('startBtn').addEventListener('click', () => {
     document.getElementById('navigation').classList.remove('hidden');
     document.getElementById('musicPlayer').classList.remove('hidden');
     
-    const audio = document.getElementById('bgMusic');
-    audio.volume = 0.5;
-    audio.play().then(() => {
-        document.getElementById('playBtn').textContent = '⏸';
-        document.getElementById('musicVisualizer').classList.add('playing');
-    }).catch(err => console.log('Audio error:', err));
+    // Intentar reproducir con SoundCloud
+    try {
+        if (window.SC) {
+            scWidget = SC.Widget(document.getElementById('soundcloudPlayer'));
+            scWidget.bind(SC.Widget.Events.READY, () => {
+                scWidget.play();
+                musicPlaying = true;
+                document.getElementById('playBtn').textContent = '⏸';
+                document.getElementById('musicVisualizer').classList.add('playing');
+            });
+        }
+    } catch (e) {
+        console.log('SoundCloud error:', e);
+    }
     
     initAllSections();
 });
 
-// ============================================
-// MUSIC PLAYER
-// ============================================
-
-const audio = document.getElementById('bgMusic');
-const playBtn = document.getElementById('playBtn');
-const volumeSlider = document.getElementById('volumeSlider');
-const volumeBtn = document.getElementById('volumeBtn');
-const musicVisualizer = document.getElementById('musicVisualizer');
-
-playBtn.addEventListener('click', () => {
-    if (audio.paused) {
-        audio.play();
-        playBtn.textContent = '⏸';
-        musicVisualizer.classList.add('playing');
-    } else {
-        audio.pause();
-        playBtn.textContent = '▶';
-        musicVisualizer.classList.remove('playing');
+// Botón de play/pause
+document.getElementById('playBtn').addEventListener('click', () => {
+    if (!scWidget) {
+        // Intentar cargar el widget si no estaba listo
+        if (window.SC) {
+            scWidget = SC.Widget(document.getElementById('soundcloudPlayer'));
+            scWidget.bind(SC.Widget.Events.READY, () => {
+                togglePlay();
+            });
+        }
+        return;
     }
+    togglePlay();
 });
 
-volumeSlider.addEventListener('input', (e) => {
-    audio.volume = e.target.value / 100;
-    volumeBtn.textContent = audio.volume === 0 ? '🔇' : audio.volume < 0.5 ? '🔉' : '🔊';
-});
-
-volumeBtn.addEventListener('click', () => {
-    if (audio.volume > 0) {
-        audio.volume = 0;
-        volumeSlider.value = 0;
-        volumeBtn.textContent = '🔇';
-    } else {
-        audio.volume = 0.5;
-        volumeSlider.value = 50;
-        volumeBtn.textContent = '🔊';
-    }
-});
+function togglePlay() {
+    if (!scWidget) return;
+    scWidget.isPaused((paused) => {
+        if (paused) {
+            scWidget.play();
+            musicPlaying = true;
+            document.getElementById('playBtn').textContent = '⏸';
+            document.getElementById('musicVisualizer').classList.add('playing');
+        } else {
+            scWidget.pause();
+            musicPlaying = false;
+            document.getElementById('playBtn').textContent = '▶';
+            document.getElementById('musicVisualizer').classList.remove('playing');
+        }
+    });
+}
 
 // ============================================
-// STORY TIMELINE ANIMATION
+// RESTO DE FUNCIONES
 // ============================================
 
 function initStoryTimeline() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
+            if (entry.isIntersecting) entry.target.classList.add('visible');
         });
     }, { threshold: 0.3 });
-    
-    document.querySelectorAll('.story-item').forEach(item => {
-        observer.observe(item);
-    });
+    document.querySelectorAll('.story-item').forEach(item => observer.observe(item));
 }
-
-// ============================================
-// ❤️ SECCIÓN DEL CORAZÓN ANIMADO
-// ============================================
 
 let currentColorIndex = 0;
 const heartColors = [
-    { name: 'Rosa-Romántico', color1: '#ff6b9d', color2: '#e74c3c', color3: '#ff6b9d', wave: '#ff6b9d' },
-    { name: 'Morado-Kuromi', color1: '#9b59b6', color2: '#c8a8e9', color3: '#9b59b6', wave: '#9b59b6' },
-    { name: 'Rojo-Intenso', color1: '#e74c3c', color2: '#c0392b', color3: '#e74c3c', wave: '#e74c3c' },
-    { name: 'Rosa-Pastel', color1: '#ffb3d1', color2: '#ff6b9d', color3: '#ffb3d1', wave: '#ffb3d1' },
-    { name: 'Dorado-Bella', color1: '#d4af37', color2: '#ff6b9d', color3: '#d4af37', wave: '#d4af37' }
+    { color1: '#ff6b9d', color2: '#e74c3c', color3: '#ff6b9d', wave: '#ff6b9d' },
+    { color1: '#9b59b6', color2: '#c8a8e9', color3: '#9b59b6', wave: '#9b59b6' },
+    { color1: '#e74c3c', color2: '#c0392b', color3: '#e74c3c', wave: '#e74c3c' },
+    { color1: '#ffb3d1', color2: '#ff6b9d', color3: '#ffb3d1', wave: '#ffb3d1' },
+    { color1: '#d4af37', color2: '#ff6b9d', color3: '#d4af37', wave: '#d4af37' }
 ];
 
 function initHeartSection() {
     const heart = document.getElementById('mainHeart');
     if (!heart) return;
     
-    // Cambio de color cada 3 segundos
     setInterval(() => {
         currentColorIndex = (currentColorIndex + 1) % heartColors.length;
         const colors = heartColors[currentColorIndex];
-        
-        // Cambiar gradiente del corazón
         const grad1 = document.getElementById('grad1');
         const grad2 = document.getElementById('grad2');
         const grad3 = document.getElementById('grad3');
-        
         if (grad1) grad1.setAttribute('stop-color', colors.color1);
         if (grad2) grad2.setAttribute('stop-color', colors.color2);
         if (grad3) grad3.setAttribute('stop-color', colors.color3);
-        
-        // Cambiar color del filtro glow
         const svg = document.getElementById('heartSvg');
-        if (svg) {
-            svg.style.filter = `drop-shadow(0 0 40px ${colors.wave})`;
-        }
+        if (svg) svg.style.filter = `drop-shadow(0 0 40px ${colors.wave})`;
     }, 3000);
-    
-    // Sincronizar ondas con el latido
-    const heartContainer = document.getElementById('heartContainer');
     
     function triggerWave() {
         const waves = document.querySelectorAll('.heart-wave');
         waves.forEach((wave, i) => {
             setTimeout(() => {
                 wave.classList.remove('active');
-                // Forzar reflow
                 void wave.offsetWidth;
                 wave.style.borderColor = heartColors[currentColorIndex].wave;
                 wave.classList.add('active');
@@ -599,40 +460,26 @@ function initHeartSection() {
             }, i * 200);
         });
     }
-    
-    // Onda cada vez que late (cada 1.2s)
     setInterval(triggerWave, 1200);
     
-    // Reacción al mouse
+    const heartContainer = document.getElementById('heartContainer');
     heartContainer.addEventListener('mousemove', (e) => {
         const rect = heart.getBoundingClientRect();
         const x = (e.clientX - rect.left - rect.width/2) / rect.width;
         const y = (e.clientY - rect.top - rect.height/2) / rect.height;
         heart.style.transform = `scale(1.15) translate(${x*15}px, ${y*15}px)`;
     });
-    
-    heartContainer.addEventListener('mouseleave', () => {
-        heart.style.transform = 'scale(1)';
-    });
-    
-    // Toques móviles
+    heartContainer.addEventListener('mouseleave', () => heart.style.transform = 'scale(1)');
     heartContainer.addEventListener('touchstart', (e) => {
         heart.style.transform = 'scale(1.25)';
         createHeartParticle(e.touches[0].clientX, e.touches[0].clientY);
     });
+    heartContainer.addEventListener('touchend', () => heart.style.transform = 'scale(1)');
     
-    heartContainer.addEventListener('touchend', () => {
-        heart.style.transform = 'scale(1)';
-    });
-    
-    // Partículas continuas
     setInterval(() => {
         if (!heartContainer) return;
         const rect = heartContainer.getBoundingClientRect();
-        createHeartParticle(
-            rect.left + rect.width/2 + (Math.random()-0.5)*100,
-            rect.top + rect.height/2 + (Math.random()-0.5)*100
-        );
+        createHeartParticle(rect.left + rect.width/2 + (Math.random()-0.5)*100, rect.top + rect.height/2 + (Math.random()-0.5)*100);
     }, 500);
 }
 
@@ -648,64 +495,30 @@ function createHeartParticle(x, y) {
     setTimeout(() => particle.remove(), 3000);
 }
 
-// ============================================
-// GALLERY
-// ============================================
-
 function initGallery() {
     const grid = document.getElementById('galleryGrid');
     CONFIG.galleryImages.forEach((img, i) => {
         const item = document.createElement('div');
         item.className = 'gallery-item';
-        item.innerHTML = `
-            <img src="${img.url}" alt="${img.title}" loading="lazy" onerror="this.src='https://via.placeholder.com/400/ff6b9d/ffffff?text=Alisson+%F0%9F%92%96'">
-            <div class="gallery-item-overlay">
-                <h3>${img.title}</h3>
-                <p>${img.description}</p>
-            </div>
-        `;
+        item.innerHTML = `<img src="${img.url}" alt="${img.title}" loading="lazy" onerror="this.src='https://via.placeholder.com/400/ff6b9d/ffffff?text=Alisson+%F0%9F%92%96'"><div class="gallery-item-overlay"><h3>${img.title}</h3><p>${img.description}</p></div>`;
         item.addEventListener('click', () => openLightbox(i));
         grid.appendChild(item);
     });
 }
 
 let currentLightboxIndex = 0;
-
-function openLightbox(index) {
-    currentLightboxIndex = index;
-    updateLightbox();
-    document.getElementById('lightbox').classList.add('active');
-}
-
-function closeLightbox() {
-    document.getElementById('lightbox').classList.remove('active');
-}
-
+function openLightbox(index) { currentLightboxIndex = index; updateLightbox(); document.getElementById('lightbox').classList.add('active'); }
+function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); }
 function updateLightbox() {
     const img = CONFIG.galleryImages[currentLightboxIndex];
     document.getElementById('lightboxImg').src = img.url;
     document.getElementById('lightboxTitle').textContent = img.title;
-    document.getElementById('lightboxDate').textContent = '';
     document.getElementById('lightboxDescription').textContent = img.description;
 }
-
 document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
-document.getElementById('lightboxPrev').addEventListener('click', () => {
-    currentLightboxIndex = (currentLightboxIndex - 1 + CONFIG.galleryImages.length) % CONFIG.galleryImages.length;
-    updateLightbox();
-});
-document.getElementById('lightboxNext').addEventListener('click', () => {
-    currentLightboxIndex = (currentLightboxIndex + 1) % CONFIG.galleryImages.length;
-    updateLightbox();
-});
-
-document.getElementById('lightbox').addEventListener('click', (e) => {
-    if (e.target.id === 'lightbox') closeLightbox();
-});
-
-// ============================================
-// LETTER
-// ============================================
+document.getElementById('lightboxPrev').addEventListener('click', () => { currentLightboxIndex = (currentLightboxIndex - 1 + CONFIG.galleryImages.length) % CONFIG.galleryImages.length; updateLightbox(); });
+document.getElementById('lightboxNext').addEventListener('click', () => { currentLightboxIndex = (currentLightboxIndex + 1) % CONFIG.galleryImages.length; updateLightbox(); });
+document.getElementById('lightbox').addEventListener('click', (e) => { if (e.target.id === 'lightbox') closeLightbox(); });
 
 function initLetter() {
     const content = document.getElementById('letterContent');
@@ -718,49 +531,25 @@ function initLetter() {
     });
 }
 
-// ============================================
-// REASONS
-// ============================================
-
 function initReasons() {
     const container = document.getElementById('reasonsContainer');
     CONFIG.reasons.forEach((reason, i) => {
         const card = document.createElement('div');
         card.className = 'reason-card';
-        card.innerHTML = `
-            <div class="reason-number">${i + 1}</div>
-            <div class="reason-text">${reason}</div>
-        `;
+        card.innerHTML = `<div class="reason-number">${i + 1}</div><div class="reason-text">${reason}</div>`;
         container.appendChild(card);
     });
 }
 
-// ============================================
-// QUIZ
-// ============================================
-
-let currentQuestion = 0;
-let score = 0;
-
-function initQuiz() {
-    showQuestion();
-}
-
+let currentQuestion = 0, score = 0;
+function initQuiz() { showQuestion(); }
 function showQuestion() {
-    if (currentQuestion >= CONFIG.quizQuestions.length) {
-        showResult();
-        return;
-    }
-    
+    if (currentQuestion >= CONFIG.quizQuestions.length) { showResult(); return; }
     const q = CONFIG.quizQuestions[currentQuestion];
-    const progress = ((currentQuestion) / CONFIG.quizQuestions.length) * 100;
-    document.getElementById('quizProgress').style.width = progress + '%';
-    
+    document.getElementById('quizProgress').style.width = ((currentQuestion) / CONFIG.quizQuestions.length) * 100 + '%';
     document.getElementById('quizQuestion').textContent = q.question;
-    
     const optionsContainer = document.getElementById('quizOptions');
     optionsContainer.innerHTML = '';
-    
     q.options.forEach((option, i) => {
         const btn = document.createElement('button');
         btn.className = 'quiz-option';
@@ -768,82 +557,33 @@ function showQuestion() {
         btn.addEventListener('click', () => checkAnswer(i, btn));
         optionsContainer.appendChild(btn);
     });
-    
     document.getElementById('quizResult').classList.remove('show');
 }
-
 function checkAnswer(selected, btn) {
     const q = CONFIG.quizQuestions[currentQuestion];
     const buttons = document.querySelectorAll('.quiz-option');
-    
     buttons.forEach(b => b.style.pointerEvents = 'none');
-    
-    if (selected === q.correct) {
-        btn.classList.add('correct');
-        score++;
-    } else {
-        btn.classList.add('incorrect');
-        buttons[q.correct].classList.add('correct');
-    }
-    
-    setTimeout(() => {
-        currentQuestion++;
-        showQuestion();
-    }, 1500);
+    if (selected === q.correct) { btn.classList.add('correct'); score++; }
+    else { btn.classList.add('incorrect'); buttons[q.correct].classList.add('correct'); }
+    setTimeout(() => { currentQuestion++; showQuestion(); }, 1500);
 }
-
 function showResult() {
     document.getElementById('quizProgress').style.width = '100%';
     document.getElementById('quizQuestion').style.display = 'none';
     document.getElementById('quizOptions').style.display = 'none';
-    
     const result = document.getElementById('quizResult');
     const percentage = Math.round((score / CONFIG.quizQuestions.length) * 100);
-    
-    let message = '';
-    if (percentage === 100) {
-        message = '¡PERFECTO! 🎉 Me conoces muchísimo, mi niña. Eres increíble ❤️';
-    } else if (percentage >= 75) {
-        message = '¡Casi perfecto! 💖 Me conoces muy bien, Alisson. Te amo';
-    } else if (percentage >= 50) {
-        message = '¡Nada mal! 😊 Pero tenemos que seguir creando recuerdos juntos 💕';
-    } else {
-        message = '¡Ups! 😅 Tendremos que crear más recuerdos juntos 💖';
-    }
-    
-    result.innerHTML = `
-        <div class="quiz-score">${score}/${CONFIG.quizQuestions.length}</div>
-        <p class="quiz-message">${message}</p>
-        <button class="quiz-restart" onclick="restartQuiz()">Intentar de nuevo 💕</button>
-    `;
+    let message = percentage === 100 ? '¡PERFECTO! 🎉 Me conoces muchísimo, mi niña. Eres increíble ❤️' : percentage >= 75 ? '¡Casi perfecto! 💖 Me conoces muy bien, Alisson. Te amo' : percentage >= 50 ? '¡Nada mal! 😊 Pero tenemos que seguir creando recuerdos juntos 💕' : '¡Ups! 😅 Tendremos que crear más recuerdos juntos 💖';
+    result.innerHTML = `<div class="quiz-score">${score}/${CONFIG.quizQuestions.length}</div><p class="quiz-message">${message}</p><button class="quiz-restart" onclick="restartQuiz()">Intentar de nuevo 💕</button>`;
     result.classList.add('show');
 }
+function restartQuiz() { currentQuestion = 0; score = 0; document.getElementById('quizQuestion').style.display = 'block'; document.getElementById('quizOptions').style.display = 'grid'; showQuestion(); }
 
-function restartQuiz() {
-    currentQuestion = 0;
-    score = 0;
-    document.getElementById('quizQuestion').style.display = 'block';
-    document.getElementById('quizOptions').style.display = 'grid';
-    showQuestion();
-}
-
-// ============================================
-// SURPRISE & FIREWORKS
-// ============================================
-
-document.getElementById('surpriseBtn').addEventListener('click', () => {
-    document.getElementById('finalOverlay').classList.remove('hidden');
-    createFireworks();
-});
-
-document.getElementById('finalClose').addEventListener('click', () => {
-    document.getElementById('finalOverlay').classList.add('hidden');
-});
-
+document.getElementById('surpriseBtn').addEventListener('click', () => { document.getElementById('finalOverlay').classList.remove('hidden'); createFireworks(); });
+document.getElementById('finalClose').addEventListener('click', () => { document.getElementById('finalOverlay').classList.add('hidden'); });
 function createFireworks() {
     const container = document.getElementById('fireworks');
     const colors = ['#ff6b9d', '#c8a8e9', '#e74c3c', '#ffb3d1', '#d4af37', '#9b59b6'];
-    
     for (let i = 0; i < 20; i++) {
         setTimeout(() => {
             const fw = document.createElement('div');
@@ -856,17 +596,11 @@ function createFireworks() {
             setTimeout(() => fw.remove(), 1500);
         }, i * 200);
     }
-    
     setTimeout(() => createFireworks(), 3000);
 }
 
-// ============================================
-// NAVIGATION
-// ============================================
-
 const navLinks = document.querySelectorAll('.nav-link');
 const navIndicator = document.getElementById('navIndicator');
-
 function updateNavIndicator(link) {
     if (!link || !navIndicator) return;
     const rect = link.getBoundingClientRect();
@@ -874,7 +608,6 @@ function updateNavIndicator(link) {
     navIndicator.style.width = rect.width + 'px';
     navIndicator.style.transform = `translateX(${rect.left - navRect.left - 8}px)`;
 }
-
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
@@ -882,29 +615,18 @@ navLinks.forEach(link => {
         if (target) target.scrollIntoView({ behavior: 'smooth' });
     });
 });
-
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('.section');
     let current = '';
     sections.forEach(section => {
         const sectionTop = section.offsetTop - 150;
-        if (window.scrollY >= sectionTop) {
-            current = section.getAttribute('id');
-        }
+        if (window.scrollY >= sectionTop) current = section.getAttribute('id');
     });
-    
     navLinks.forEach(link => {
         link.classList.remove('active');
-        if (link.dataset.section === current) {
-            link.classList.add('active');
-            updateNavIndicator(link);
-        }
+        if (link.dataset.section === current) { link.classList.add('active'); updateNavIndicator(link); }
     });
 });
-
-// ============================================
-// CLICK EFFECTS
-// ============================================
 
 document.addEventListener('click', (e) => {
     const effects = ['❤', '✨', '💖', '💕', '⭐', '🌸', '🦋'];
@@ -920,16 +642,8 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// ============================================
-// SCROLL REVEAL
-// ============================================
-
 const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-        }
-    });
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
 }, { threshold: 0.1 });
 
 function initAllSections() {
@@ -939,22 +653,18 @@ function initAllSections() {
     initLetter();
     initReasons();
     initQuiz();
-    
     document.querySelectorAll('.section-title, .section-subtitle, .counter-container, .birthday-countdown, .heart-container, .gallery-item, .dream-item, .reason-card').forEach(el => {
         el.classList.add('reveal');
         revealObserver.observe(el);
     });
-    
-    setTimeout(() => {
-        const activeLink = document.querySelector('.nav-link.active');
-        if (activeLink) updateNavIndicator(activeLink);
-    }, 100);
+    setTimeout(() => { const activeLink = document.querySelector('.nav-link.active'); if (activeLink) updateNavIndicator(activeLink); }, 100);
 }
 
-// ============================================
-// INICIALIZAR
-// ============================================
+// 🎵 Cargar API de SoundCloud
+(function() {
+    const script = document.createElement('script');
+    script.src = 'https://w.soundcloud.com/player/api.js';
+    document.head.appendChild(script);
+})();
 
-window.addEventListener('load', () => {
-    setTimeout(simulateLoader, 500);
-});
+window.addEventListener('load', () => { setTimeout(simulateLoader, 500); });
