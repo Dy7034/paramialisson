@@ -11,16 +11,10 @@
     <!-- LOADER -->
     <div id="loader" class="loader">
         <div class="loader-content">
-            <div class="enchanted-rose">
-                <div class="rose">
-                    <div class="rose-petal"></div>
-                    <div class="rose-petal"></div>
-                    <div class="rose-petal"></div>
-                    <div class="rose-petal"></div>
-                    <div class="rose-petal"></div>
-                    <div class="rose-center"></div>
-                </div>
-                <div class="rose-glass"></div>
+            <div class="loader-heart">
+                <svg viewBox="0 0 32 29.6">
+                    <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4 c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+                </svg>
             </div>
             <h1 class="loader-title">Para Alisson</h1>
             <p class="loader-subtitle">Mi niña, mi amor, mi vida</p>
@@ -194,7 +188,7 @@
             <p class="section-subtitle">Un cuento de hadas hecho realidad</p>
             
             <div class="story-timeline">
-                <div class="story-item" data-aos="fade-right">
+                <div class="story-item">
                     <div class="story-icon">💫</div>
                     <div class="story-content glass">
                         <h3>2023 - El Comienzo</h3>
@@ -202,15 +196,15 @@
                     </div>
                 </div>
                 
-                <div class="story-item" data-aos="fade-left">
+                <div class="story-item">
                     <div class="story-icon">💃</div>
                     <div class="story-content glass">
-                        <h3>Los 15 Años</h3>
-                        <p>Mi primera vez como chambelán. Tú eras mi compañera de baile. Yo no sabía bailar, pero todo era más fácil contigo. Ahí empezó todo.</p>
+                        <h3>Los 15 de Tu Prima</h3>
+                        <p>Me invitaron como chambelán a los 15 de tu prima, y tú estabas ahí. Yo no sabía bailar casi nada, pero todo era más fácil cuando estaba contigo. Ahí empezó todo.</p>
                     </div>
                 </div>
                 
-                <div class="story-item" data-aos="fade-right">
+                <div class="story-item">
                     <div class="story-icon">👀</div>
                     <div class="story-content glass">
                         <h3>Cuando te vi por primera vez</h3>
@@ -218,19 +212,19 @@
                     </div>
                 </div>
                 
-                <div class="story-item" data-aos="fade-left">
+                <div class="story-item">
                     <div class="story-icon">💘</div>
                     <div class="story-content glass">
                         <h3>El Día que Cambió Todo</h3>
-                        <p>Domingo 12 de Abril, 2026. No solo conseguí una novia, encontré a la persona con la que quiero compartir cada uno de mis días.</p>
+                        <p>Domingo 12 de Abril, 2026. El día que te pedí que fueras mi novia. No solo conseguí una novia, encontré a la persona con la que quiero compartir cada uno de mis días.</p>
                     </div>
                 </div>
                 
-                <div class="story-item" data-aos="fade-right">
+                <div class="story-item">
                     <div class="story-icon">💕</div>
                     <div class="story-content glass">
                         <h3>Hoy - Nuestro Presente</h3>
-                        <p>Cada día a tu lado es un regalo. Cada "Ti amo", cada risa, cada momento. Eres mi mejor elección.</p>
+                        <p>Cada día a tu lado es un regalo. Cada "Ti amo", cada risa, cada momento. Eres mi mejor elección, Chuky.</p>
                     </div>
                 </div>
             </div>
@@ -239,20 +233,32 @@
         <!-- CORAZÓN -->
         <section id="corazon" class="section section-corazon">
             <h2 class="section-title">Nuestro Corazón</h2>
-            <p class="section-subtitle">La rosa encantada de nuestro amor</p>
+            <p class="section-subtitle">El latido que nos mantiene vivos</p>
             
             <div class="heart-container" id="heartContainer">
-                <div class="heart-glow"></div>
-                <div class="enchanted-rose-main">
-                    <div class="rose-main">
-                        <div class="rose-petal-main"></div>
-                        <div class="rose-petal-main"></div>
-                        <div class="rose-petal-main"></div>
-                        <div class="rose-petal-main"></div>
-                        <div class="rose-petal-main"></div>
-                        <div class="rose-center-main"></div>
-                    </div>
-                    <div class="rose-glow"></div>
+                <div class="heart-wave" id="heartWave1"></div>
+                <div class="heart-wave" id="heartWave2"></div>
+                <div class="heart-wave" id="heartWave3"></div>
+                <div class="heart-main" id="mainHeart">
+                    <svg viewBox="0 0 32 29.6" id="heartSvg">
+                        <defs>
+                            <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" id="grad1" stop-color="#ff6b9d"/>
+                                <stop offset="50%" id="grad2" stop-color="#e74c3c"/>
+                                <stop offset="100%" id="grad3" stop-color="#ff6b9d"/>
+                            </linearGradient>
+                            <filter id="heartGlow">
+                                <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4 c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" 
+                              fill="url(#heartGradient)" 
+                              filter="url(#heartGlow)"/>
+                    </svg>
                 </div>
                 <div class="heart-particles" id="heartParticles"></div>
             </div>
@@ -317,7 +323,7 @@
                 <div class="dream-item">
                     <div class="dream-icon">🎓</div>
                     <h3>2027 - El Año</h3>
-                    <p>El próximo año comienza tu camino hacia la universidad. Estoy tan orgulloso de ti por elegir algo que te apasiona.</p>
+                    <p>El próximo año comienza tu camino hacia la universidad. Estoy tan orgulloso de ti por elegir algo que te apasiona y que te acercará a las personas que amas.</p>
                 </div>
                 <div class="dream-item">
                     <div class="dream-icon">🏡</div>
@@ -389,7 +395,7 @@
 
     <!-- AUDIO -->
     <audio id="bgMusic" loop>
-        <source src="https://cdn.pixabay.com/audio/2022/05/27/audio_1808fbf07a.mp3" type="audio/mpeg">
+        <source src="https://limewire.com/d/6aQWw#FQuU4pEA2U" type="audio/mpeg">
     </audio>
 
     <script src="script.js"></script>
