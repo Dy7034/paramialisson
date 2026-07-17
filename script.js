@@ -1,6 +1,6 @@
 // ============================================
-// NUESTRO PEQUEÑO MUNDO - LÓGICA v5.0
-// Para Alisson - Con todo mi amor
+// NUESTRO PEQUEÑO MUNDO - LÓGICA v6.0
+// Senior Developer Approach
 // ============================================
 
 const CONFIG = {
@@ -38,34 +38,34 @@ const CONFIG = {
         'Mi niña,',
         'Hay personas que llegan a nuestra vida sin hacer ruido, y poco a poco terminan convirtiéndose en todo. Tú hiciste exactamente eso conmigo.',
         'A veces me pongo a pensar en todo lo que tuvo que pasar para que hoy estemos aquí. Pienso en aquel 2023, cuando hablamos por primera vez gracias a Masha.',
-        'Después llegó aquel 15 años donde me invitaron a ser chambelán y tú eras mi compañera de baile. Yo no sabía bailar casi nada, pero todo era más fácil cuando estaba contigo.',
-        'Cuando te vi por primera vez pensé que eras una muchacha muy bonita. Te veías un poco introvertida.',
-        'Sin hacer grandes cosas, con cada conversación, con cada risa y con cada momento, fuiste ocupando un lugar en mi corazón que nadie más había ocupado.',
-        'Hubo un momento en el que me descubrí diciéndome a mí mismo: "Quiero que ella sea mi primer y única novia".',
-        'Estaba enamorado de ti. Enamorado de tu personalidad, de tus metas, de tu forma de cuidar a las personas.',
+        'Después llegó aquel 15 años donde me invitaron a ser chambelán y tú eras mi compañera de baile.',
+        'Cuando te vi por primera vez pensé que eras una muchacha muy bonita.',
+        'Sin hacer grandes cosas, con cada conversación, fuiste ocupando un lugar en mi corazón que nadie más había ocupado.',
+        'Hubo un momento en el que me descubrí diciéndome: "Quiero que ella sea mi primer y única novia".',
+        'Estaba enamorado de ti. De tu personalidad, de tus metas, de tu forma de cuidar a las personas.',
         'El domingo 12 de abril de 2026 cambió mi vida para siempre.',
-        'Desde entonces entendí que amar también significa elegir a alguien todos los días. Y si me preguntaran mil veces a quién volvería a elegir, mi respuesta siempre sería la misma: a ti.',
+        'Si me preguntaran mil veces a quién volvería a elegir, mi respuesta siempre sería la misma: a ti.',
         'Gracias por quedarte.',
-        'Gracias por cada "Amor", por cada "Ti amo", por cada "mi niño", por cada foto, por abrazarme, por cuidarme.',
-        'Hay algo que quiero que nunca olvides: gracias a ti soy una mejor versión de mí mismo.',
-        'Tú me has enseñado a amar con paciencia, a pensar en alguien antes que en mí.',
-        'Gracias a ti he aprendido que un día normal puede convertirse en el mejor de todos solo porque estás conmigo.',
+        'Gracias por cada "Amor", por cada "Ti amo", por cada foto, por abrazarme, por cuidarme.',
+        'Gracias a ti soy una mejor versión de mí mismo.',
+        'Tú me has enseñado a amar con paciencia.',
+        'Un día normal puede convertirse en el mejor solo porque estás conmigo.',
         'Cuando no estamos juntos te extraño muchísimo.',
-        'Me imagino abrazándote, escuchándote hablar, viendo cómo sonríes. Son esas pequeñas cosas las que hacen que te ame todavía más.',
-        'Me encanta cuando me gritas "Amoor", cuando jugamos Crash Team Racing, cuando vemos películas, cuando caminamos juntos.',
+        'Me imagino abrazándote, escuchándote hablar, viendo cómo sonríes.',
+        'Me encanta cuando me gritas "Amoor", cuando jugamos Crash Team Racing, cuando caminamos juntos.',
         'Esos momentos son los que algún día quiero recordar siendo viejitos contigo.',
         'También quiero agradecerte por estar a mi lado incluso cuando hemos tenido diferencias.',
         'No voy a decirte que soy perfecto, porque no lo soy.',
-        'Pero sí puedo prometerte algo: jamás dejaré de esforzarme por ser un mejor novio para ti.',
-        'Quiero construir un futuro contigo. Quiero verte cumplir tu sueño de convertirte en odontóloga.',
-        'Quiero viajar contigo, conocer playas, montañas. Quiero que algún día tengamos nuestro hogar.',
+        'Jamás dejaré de esforzarme por ser un mejor novio para ti.',
+        'Quiero construir un futuro contigo. Quiero verte cumplir tu sueño de odontóloga.',
+        'Quiero viajar contigo, conocer playas, montañas.',
         'Y sí, también sueño con formar una familia contigo.',
-        'Dicen que encontrar a la persona correcta cambia la vida. Yo no solo lo creo; lo vivo todos los días desde que llegaste a la mía.',
+        'Dicen que encontrar a la persona correcta cambia la vida. Yo lo vivo cada día.',
         'Eres mi mejor elección.',
         'Y si algún día dudas de cuánto te amo, recuerda esto:',
         'Te amo muchísimo con montones. ❣️',
         'Te amo de aquí a la Luna🌕 a pasito de tortuga🐢, de la Luna🌕 al Sol☀️ a pasito de caracol🐌 y del Sol☀️ al mar🌊 a pasito de calamar🐙. ❣️',
-        'Gracias por convertirte en mi hogar, en mi tranquilidad, en mi lugar favorito.',
+        'Gracias por convertirte en mi hogar.',
         'Gracias por existir.',
         'Con todo mi corazón que te ama, hoy, mañana y siempre,',
         'Tu niño de silicona ❤️'
@@ -87,7 +87,10 @@ const CONFIG = {
     ]
 };
 
+// ============================================
 // LOADER
+// ============================================
+
 let loaderProgress = 0, currentMessageIndex = 0;
 function updateLoaderMessage() {
     const m = document.getElementById('loaderMessage');
@@ -134,7 +137,10 @@ function createButterflies() {
     }, 3000);
 }
 
+// ============================================
 // CURSOR
+// ============================================
+
 const cursor = document.getElementById('cursor'), cursorFollower = document.getElementById('cursorFollower');
 let mouseX = 0, mouseY = 0, followerX = 0, followerY = 0;
 document.addEventListener('mousemove', (e) => {
@@ -147,17 +153,42 @@ function animateFollower() {
     requestAnimationFrame(animateFollower);
 }
 animateFollower();
-document.querySelectorAll('button, a, .gallery-item, .promesa-card, .star').forEach(el => {
+document.querySelectorAll('button, a, .gallery-item, .promesa-card, .star, .nav-toggle').forEach(el => {
     el.addEventListener('mouseenter', () => { cursor.classList.add('active'); cursorFollower.classList.add('active'); });
     el.addEventListener('mouseleave', () => { cursor.classList.remove('active'); cursorFollower.classList.remove('active'); });
 });
 
+// ============================================
 // PARTICLES
+// ============================================
+
 const canvas = document.getElementById('particlesCanvas'), ctx = canvas.getContext('2d');
 let particles = [];
 function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
 resizeCanvas(); window.addEventListener('resize', resizeCanvas);
-class Particle { constructor() { this.reset(); } reset() { this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height; this.size = Math.random() * 2 + 0.5; this.speedX = (Math.random() - 0.5) * 0.3; this.speedY = (Math.random() - 0.5) * 0.3; this.opacity = Math.random() * 0.5 + 0.2; } update() { this.x += this.speedX; this.y += this.speedY; if (this.x < 0 || this.x > canvas.width) this.speedX *= -1; if (this.y < 0 || this.y > canvas.height) this.speedY *= -1; } draw() { ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fillStyle = `rgba(255, 179, 209, ${this.opacity})`; ctx.fill(); } }
+class Particle { 
+    constructor() { this.reset(); } 
+    reset() { 
+        this.x = Math.random() * canvas.width; 
+        this.y = Math.random() * canvas.height; 
+        this.size = Math.random() * 2 + 0.5; 
+        this.speedX = (Math.random() - 0.5) * 0.3; 
+        this.speedY = (Math.random() - 0.5) * 0.3; 
+        this.opacity = Math.random() * 0.5 + 0.2; 
+    } 
+    update() { 
+        this.x += this.speedX; 
+        this.y += this.speedY; 
+        if (this.x < 0 || this.x > canvas.width) this.speedX *= -1; 
+        if (this.y < 0 || this.y > canvas.height) this.speedY *= -1; 
+    } 
+    draw() { 
+        ctx.beginPath(); 
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); 
+        ctx.fillStyle = `rgba(255, 179, 209, ${this.opacity})`; 
+        ctx.fill(); 
+    } 
+}
 for (let i = 0; i < 50; i++) particles.push(new Particle());
 function animateParticles() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -166,7 +197,10 @@ function animateParticles() {
 }
 animateParticles();
 
+// ============================================
 // COUNTER
+// ============================================
+
 function updateCounter() {
     const now = new Date(), diff = now - CONFIG.startDate;
     if (diff < 0) { ['years','months','days','hours','minutes','seconds'].forEach(id => document.getElementById(id).textContent = '0'); return; }
@@ -176,13 +210,19 @@ function updateCounter() {
     const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-    document.getElementById('years').textContent = years; document.getElementById('months').textContent = months;
-    document.getElementById('days').textContent = days; document.getElementById('hours').textContent = hours;
-    document.getElementById('minutes').textContent = minutes; document.getElementById('seconds').textContent = seconds;
+    document.getElementById('years').textContent = years; 
+    document.getElementById('months').textContent = months;
+    document.getElementById('days').textContent = days; 
+    document.getElementById('hours').textContent = hours;
+    document.getElementById('minutes').textContent = minutes; 
+    document.getElementById('seconds').textContent = seconds;
 }
 setInterval(updateCounter, 1000); updateCounter();
 
-// 🎵 MÚSICA
+// ============================================
+// MÚSICA
+// ============================================
+
 const audio = document.getElementById('bgMusic');
 const playBtn = document.getElementById('playBtn');
 const volumeBtn = document.getElementById('volumeBtn');
@@ -191,14 +231,13 @@ const musicVisualizer = document.getElementById('musicVisualizer');
 document.getElementById('startBtn').addEventListener('click', () => {
     document.getElementById('welcomeScreen').classList.add('hidden');
     document.getElementById('mainContent').classList.remove('hidden');
-    document.getElementById('navigation').classList.remove('hidden');
     document.getElementById('musicPlayer').classList.remove('hidden');
     
     audio.volume = 0.5;
     audio.play().then(() => {
         playBtn.textContent = '⏸';
         musicVisualizer.classList.add('playing');
-    }).catch(err => console.log('Autoplay:', err));
+    }).catch(err => console.log('Audio:', err));
     
     initAllSections();
 });
@@ -213,63 +252,144 @@ volumeBtn.addEventListener('click', () => {
     else { audio.volume = 0.5; volumeBtn.textContent = '🔊'; }
 });
 
+// ============================================
 // CORAZÓN
+// ============================================
+
 let currentColorIndex = 0;
 const heartColors = [{c1:'#ff6b9d',c2:'#e74c3c',c3:'#ff6b9d',w:'#ff6b9d'},{c1:'#9b59b6',c2:'#c8a8e9',c3:'#9b59b6',w:'#9b59b6'},{c1:'#e74c3c',c2:'#c0392b',c3:'#e74c3c',w:'#e74c3c'},{c1:'#ffb3d1',c2:'#ff6b9d',c3:'#ffb3d1',w:'#ffb3d1'},{c1:'#d4af37',c2:'#ff6b9d',c3:'#d4af37',w:'#d4af37'}];
 
 function initHeartSection() {
-    const heart = document.getElementById('mainHeart'); if (!heart) return;
+    const heart = document.getElementById('mainHeart'); 
+    if (!heart) return;
     setInterval(() => {
         currentColorIndex = (currentColorIndex + 1) % heartColors.length;
         const c = heartColors[currentColorIndex];
         const g1 = document.getElementById('grad1'), g2 = document.getElementById('grad2'), g3 = document.getElementById('grad3');
-        if (g1) g1.setAttribute('stop-color', c.c1); if (g2) g2.setAttribute('stop-color', c.c2); if (g3) g3.setAttribute('stop-color', c.c3);
-        const svg = document.getElementById('heartSvg'); if (svg) svg.style.filter = `drop-shadow(0 0 50px ${c.w})`;
-        const ecg = document.getElementById('ecgPath'); if (ecg) ecg.setAttribute('stroke', c.w);
+        if (g1) g1.setAttribute('stop-color', c.c1); 
+        if (g2) g2.setAttribute('stop-color', c.c2); 
+        if (g3) g3.setAttribute('stop-color', c.c3);
+        const svg = document.getElementById('heartSvg'); 
+        if (svg) svg.style.filter = `drop-shadow(0 0 50px ${c.w})`;
+        const ecg = document.getElementById('ecgPath'); 
+        if (ecg) ecg.setAttribute('stroke', c.w);
     }, 2500);
+    
     const c = document.getElementById('heartContainer');
-    c.addEventListener('mousemove', (e) => { const r = heart.getBoundingClientRect(); const x = (e.clientX - r.left - r.width/2) / r.width; const y = (e.clientY - r.top - r.height/2) / r.height; heart.style.transform = `scale(1.2) translate(${x*20}px, ${y*20}px)`; });
+    c.addEventListener('mousemove', (e) => { 
+        const r = heart.getBoundingClientRect(); 
+        const x = (e.clientX - r.left - r.width/2) / r.width; 
+        const y = (e.clientY - r.top - r.height/2) / r.height; 
+        heart.style.transform = `scale(1.2) translate(${x*20}px, ${y*20}px)`; 
+    });
     c.addEventListener('mouseleave', () => heart.style.transform = 'scale(1)');
-    c.addEventListener('touchstart', (e) => { heart.style.transform = 'scale(1.3)'; createHeartParticle(e.touches[0].clientX, e.touches[0].clientY); });
+    c.addEventListener('touchstart', (e) => { 
+        heart.style.transform = 'scale(1.3)'; 
+        createHeartParticle(e.touches[0].clientX, e.touches[0].clientY); 
+    });
     c.addEventListener('touchend', () => heart.style.transform = 'scale(1)');
-    setInterval(() => { if (!c) return; const r = c.getBoundingClientRect(); createHeartParticle(r.left + r.width/2 + (Math.random()-0.5)*120, r.top + r.height/2 + (Math.random()-0.5)*120); }, 400);
-}
-function createHeartParticle(x, y) {
-    const p = document.createElement('div'); p.className = 'heart-particle'; p.innerHTML = '❤';
-    p.style.left = x + 'px'; p.style.top = y + 'px';
-    p.style.setProperty('--tx', (Math.random()-0.5)*180 + 'px'); p.style.setProperty('--ty', -100 - Math.random()*100 + 'px');
-    document.body.appendChild(p); setTimeout(() => p.remove(), 3000);
+    
+    setInterval(() => { 
+        if (!c) return; 
+        const r = c.getBoundingClientRect(); 
+        createHeartParticle(r.left + r.width/2 + (Math.random()-0.5)*120, r.top + r.height/2 + (Math.random()-0.5)*120); 
+    }, 400);
 }
 
-// GALLERY
+function createHeartParticle(x, y) {
+    const p = document.createElement('div'); 
+    p.className = 'heart-particle'; 
+    p.innerHTML = '❤';
+    p.style.left = x + 'px'; 
+    p.style.top = y + 'px';
+    p.style.setProperty('--tx', (Math.random()-0.5)*180 + 'px'); 
+    p.style.setProperty('--ty', -100 - Math.random()*100 + 'px');
+    document.body.appendChild(p); 
+    setTimeout(() => p.remove(), 3000);
+}
+
+// ============================================
+// GALERÍA
+// ============================================
+
 function initGallery() {
     const grid = document.getElementById('galleryGrid');
+    if (!grid) return;
     CONFIG.galleryImages.forEach((img, i) => {
-        const item = document.createElement('div'); item.className = 'gallery-item';
-        item.setAttribute('data-animation', 'zoom-in');
-        item.setAttribute('data-delay', i * 100);
+        const item = document.createElement('div'); 
+        item.className = 'gallery-item';
         item.innerHTML = `<img src="${img.url}" alt="${img.title}" loading="lazy" onerror="this.src='https://via.placeholder.com/400/ff6b9d/ffffff?text=Alisson'"><div class="gallery-item-overlay"><h3>${img.title}</h3><p>${img.description}</p></div>`;
-        item.addEventListener('click', () => openLightbox(i)); grid.appendChild(item);
+        item.addEventListener('click', () => openLightbox(i)); 
+        grid.appendChild(item);
     });
 }
+
 let currentLightboxIndex = 0;
-function openLightbox(i) { currentLightboxIndex = i; updateLightbox(); document.getElementById('lightbox').classList.add('active'); }
-function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); }
-function updateLightbox() { const img = CONFIG.galleryImages[currentLightboxIndex]; document.getElementById('lightboxImg').src = img.url; document.getElementById('lightboxTitle').textContent = img.title; document.getElementById('lightboxDescription').textContent = img.description; }
+function openLightbox(i) { 
+    currentLightboxIndex = i; 
+    updateLightbox(); 
+    document.getElementById('lightbox').classList.add('active'); 
+}
+function closeLightbox() { 
+    document.getElementById('lightbox').classList.remove('active'); 
+}
+function updateLightbox() { 
+    const img = CONFIG.galleryImages[currentLightboxIndex]; 
+    document.getElementById('lightboxImg').src = img.url; 
+    document.getElementById('lightboxTitle').textContent = img.title; 
+    document.getElementById('lightboxDescription').textContent = img.description; 
+}
 document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
-document.getElementById('lightboxPrev').addEventListener('click', () => { currentLightboxIndex = (currentLightboxIndex - 1 + CONFIG.galleryImages.length) % CONFIG.galleryImages.length; updateLightbox(); });
-document.getElementById('lightboxNext').addEventListener('click', () => { currentLightboxIndex = (currentLightboxIndex + 1) % CONFIG.galleryImages.length; updateLightbox(); });
-document.getElementById('lightbox').addEventListener('click', (e) => { if (e.target.id === 'lightbox') closeLightbox(); });
+document.getElementById('lightboxPrev').addEventListener('click', () => { 
+    currentLightboxIndex = (currentLightboxIndex - 1 + CONFIG.galleryImages.length) % CONFIG.galleryImages.length; 
+    updateLightbox(); 
+});
+document.getElementById('lightboxNext').addEventListener('click', () => { 
+    currentLightboxIndex = (currentLightboxIndex + 1) % CONFIG.galleryImages.length; 
+    updateLightbox(); 
+});
+document.getElementById('lightbox').addEventListener('click', (e) => { 
+    if (e.target.id === 'lightbox') closeLightbox(); 
+});
 
-// LETTER
-function initLetter() { const c = document.getElementById('letterContent'); CONFIG.letterText.forEach((t, i) => { const p = document.createElement('p'); if (i === 0 || i === CONFIG.letterText.length - 1) p.className = 'signature'; p.textContent = t; p.style.animationDelay = (i * 0.4) + 's'; c.appendChild(p); }); }
+// ============================================
+// CARTA
+// ============================================
 
-// REASONS
-function initReasons() { const c = document.getElementById('reasonsContainer'); CONFIG.reasons.forEach((r, i) => { const card = document.createElement('div'); card.className = 'reason-card'; card.setAttribute('data-animation', 'flip-in'); card.setAttribute('data-delay', i * 80); card.innerHTML = `<div class="reason-number">${i + 1}</div><div class="reason-text">${r}</div>`; c.appendChild(card); }); }
+function initLetter() { 
+    const c = document.getElementById('letterContent'); 
+    if (!c) return;
+    CONFIG.letterText.forEach((t, i) => { 
+        const p = document.createElement('p'); 
+        if (i === 0 || i === CONFIG.letterText.length - 1) p.className = 'signature'; 
+        p.textContent = t; 
+        p.style.animationDelay = (i * 0.4) + 's'; 
+        c.appendChild(p); 
+    }); 
+}
 
+// ============================================
+// RAZONES
+// ============================================
+
+function initReasons() { 
+    const c = document.getElementById('reasonsContainer'); 
+    if (!c) return;
+    CONFIG.reasons.forEach((r, i) => { 
+        const card = document.createElement('div'); 
+        card.className = 'reason-card'; 
+        card.innerHTML = `<div class="reason-number">${i + 1}</div><div class="reason-text">${r}</div>`; 
+        c.appendChild(card); 
+    }); 
+}
+
+// ============================================
 // CONSTELACIÓN
+// ============================================
+
 function initConstellation() {
     const container = document.getElementById('constellation');
+    if (!container) return;
     const positions = [
         { x: 20, y: 20 }, { x: 50, y: 15 }, { x: 80, y: 25 },
         { x: 15, y: 50 }, { x: 45, y: 55 }, { x: 75, y: 50 },
@@ -279,8 +399,6 @@ function initConstellation() {
     positions.forEach((pos, i) => {
         const star = document.createElement('div');
         star.className = 'star';
-        star.setAttribute('data-animation', 'fade');
-        star.setAttribute('data-delay', i * 200);
         star.textContent = '⭐';
         star.style.left = pos.x + '%';
         star.style.top = pos.y + '%';
@@ -295,10 +413,14 @@ function initConstellation() {
     });
 }
 
+// ============================================
 // CARTA FUTURO
+// ============================================
+
 function initFutureLetter() {
     const sealed = document.getElementById('sealedLetter');
     const content = document.getElementById('futureLetterContent');
+    if (!sealed || !content) return;
     const futureDate = new Date('2027-08-26T00:00:00');
     const now = new Date();
     
@@ -310,34 +432,83 @@ function initFutureLetter() {
     }
 }
 
+// ============================================
 // PROMESAS
+// ============================================
+
 function initPromesas() {
-    document.querySelectorAll('.promesa-card').forEach(card => {
+    document.querySelectorAll('.promesa-card').forEach((card, i) => {
+        card.style.transitionDelay = (i * 0.1) + 's';
         card.addEventListener('click', () => {
             if (!card.classList.contains('animated')) card.classList.add('animated');
         });
     });
 }
 
-// SURPRISE
-document.getElementById('surpriseBtn').addEventListener('click', () => { document.getElementById('finalOverlay').classList.remove('hidden'); createFireworks(); });
-document.getElementById('finalClose').addEventListener('click', () => { document.getElementById('finalOverlay').classList.add('hidden'); });
+// ============================================
+// SORPRESA
+// ============================================
+
+document.getElementById('surpriseBtn').addEventListener('click', () => { 
+    document.getElementById('finalOverlay').classList.remove('hidden'); 
+    createFireworks(); 
+});
+document.getElementById('finalClose').addEventListener('click', () => { 
+    document.getElementById('finalOverlay').classList.add('hidden'); 
+});
+
 function createFireworks() {
-    const c = document.getElementById('fireworks'); const colors = ['#ff6b9d', '#c8a8e9', '#e74c3c', '#ffb3d1', '#d4af37', '#9b59b6'];
-    for (let i = 0; i < 20; i++) setTimeout(() => { const fw = document.createElement('div'); fw.className = 'firework'; fw.style.left = Math.random() * 100 + 'vw'; fw.style.top = Math.random() * 100 + 'vh'; fw.style.background = colors[Math.floor(Math.random() * colors.length)]; fw.style.boxShadow = `0 0 30px ${fw.style.background}`; c.appendChild(fw); setTimeout(() => fw.remove(), 1500); }, i * 200);
+    const c = document.getElementById('fireworks'); 
+    const colors = ['#ff6b9d', '#c8a8e9', '#e74c3c', '#ffb3d1', '#d4af37', '#9b59b6'];
+    for (let i = 0; i < 20; i++) setTimeout(() => { 
+        const fw = document.createElement('div'); 
+        fw.className = 'firework'; 
+        fw.style.left = Math.random() * 100 + 'vw'; 
+        fw.style.top = Math.random() * 100 + 'vh'; 
+        fw.style.background = colors[Math.floor(Math.random() * colors.length)]; 
+        fw.style.boxShadow = `0 0 30px ${fw.style.background}`; 
+        c.appendChild(fw); 
+        setTimeout(() => fw.remove(), 1500); 
+    }, i * 200);
     setTimeout(() => createFireworks(), 3000);
 }
 
-// NAVIGATION
-const navLinks = document.querySelectorAll('.nav-link'), navIndicator = document.getElementById('navIndicator');
-function updateNavIndicator(link) { if (!link || !navIndicator) return; const r = link.getBoundingClientRect(); const nr = link.parentElement.parentElement.getBoundingClientRect(); navIndicator.style.width = r.width + 'px'; navIndicator.style.transform = `translateX(${r.left - nr.left - 8}px)`; }
-navLinks.forEach(link => { link.addEventListener('click', (e) => { e.preventDefault(); const t = document.querySelector(link.getAttribute('href')); if (t) t.scrollIntoView({ behavior: 'smooth' }); }); });
+// ============================================
+// NAVIGATION TOGGLE (COLAPSABLE)
+// ============================================
+
+const navToggle = document.getElementById('navToggle');
+const navigation = document.getElementById('navigation');
+
+if (navToggle && navigation) {
+    navToggle.addEventListener('click', () => {
+        navigation.classList.toggle('active');
+        navToggle.classList.toggle('active');
+    });
+}
+
+// Cerrar menú al hacer clic en un enlace
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const t = document.querySelector(link.getAttribute('href'));
+        if (t) {
+            t.scrollIntoView({ behavior: 'smooth' });
+            // Cerrar menú en móvil
+            if (navigation) {
+                navigation.classList.remove('active');
+                navToggle.classList.remove('active');
+            }
+        }
+    });
+});
+
+// ============================================
+// SCROLL PROGRESS & ACTIVE NAV
+// ============================================
+
 window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('.section'); let current = '';
-    sections.forEach(section => { if (window.scrollY >= section.offsetTop - 150) current = section.getAttribute('id'); });
-    navLinks.forEach(link => { link.classList.remove('active'); if (link.dataset.section === current) { link.classList.add('active'); updateNavIndicator(link); } });
-    
-    // Scroll progress bar
+    // Progress bar
     const scrollProgress = document.getElementById('scrollProgress');
     if (scrollProgress) {
         const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -345,9 +516,24 @@ window.addEventListener('scroll', () => {
         const scrolled = (winScroll / height) * 100;
         scrollProgress.style.width = scrolled + '%';
     }
+    
+    // Active section
+    const sections = document.querySelectorAll('.section'); 
+    let current = '';
+    sections.forEach(section => { 
+        if (window.scrollY >= section.offsetTop - 200) current = section.getAttribute('id'); 
+    });
+    
+    document.querySelectorAll('.nav-link').forEach(link => { 
+        link.classList.remove('active'); 
+        if (link.dataset.section === current) link.classList.add('active'); 
+    });
 });
 
+// ============================================
 // CLICK EFFECTS
+// ============================================
+
 document.addEventListener('click', (e) => {
     const effects = ['❤', '✨', '💖', '💕', '⭐', '🌸', '🦋'];
     for (let i = 0; i < 4; i++) { 
@@ -363,79 +549,92 @@ document.addEventListener('click', (e) => {
 });
 
 // ============================================
-// ⭐ SISTEMA DE ANIMACIONES POR SCROLL ⭐
+// ⭐ SISTEMA DE SCROLL ANIMATIONS (SENIOR DEV) ⭐
 // ============================================
 
 function initScrollAnimations() {
-    // Configurar el observer
-    const observerOptions = {
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px'
-    };
+    console.log('🎬 Inicializando animaciones de scroll...');
     
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const el = entry.target;
-                const animation = el.dataset.animation;
-                const delay = parseInt(el.dataset.delay) || 0;
-                
-                setTimeout(() => {
-                    el.classList.add('animated');
+    // Esperar a que todo esté listo
+    setTimeout(() => {
+        const animatedElements = document.querySelectorAll('[data-animation]');
+        console.log(`📊 Elementos con animación: ${animatedElements.length}`);
+        
+        if (animatedElements.length === 0) {
+            console.warn('⚠️ No se encontraron elementos con data-animation');
+            return;
+        }
+        
+        // Verificar soporte de IntersectionObserver
+        if (!('IntersectionObserver' in window)) {
+            console.warn('⚠️ IntersectionObserver no soportado, mostrando todo');
+            animatedElements.forEach(el => el.classList.add('animated'));
+            return;
+        }
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const animation = el.dataset.animation;
+                    const delay = parseInt(el.dataset.delay) || 0;
                     
-                    // Efectos especiales según la sección
-                    const section = el.closest('.section');
-                    if (section) {
-                        handleSectionEffects(section);
-                    }
-                }, delay);
-                
-                observer.unobserve(el);
-            }
+                    console.log(`✨ Activando animación "${animation}" en:`, el);
+                    
+                    setTimeout(() => {
+                        el.classList.add('animated');
+                        
+                        // Efectos especiales
+                        const section = el.closest('.section');
+                        if (section) handleSectionEffects(section);
+                    }, delay);
+                    
+                    observer.unobserve(el);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
         });
-    }, observerOptions);
-    
-    // Observar todos los elementos con data-animation
-    document.querySelectorAll('[data-animation]').forEach(el => {
-        observer.observe(el);
-    });
+        
+        // Observar todos
+        animatedElements.forEach((el, index) => {
+            observer.observe(el);
+            
+            // FALLBACK: Si después de 5 segundos no se ha animado, mostrarlo
+            setTimeout(() => {
+                if (!el.classList.contains('animated')) {
+                    console.log(`⚠️ Fallback: mostrando elemento ${index}`);
+                    el.classList.add('animated');
+                }
+            }, 5000 + (index * 100));
+        });
+        
+        console.log('✅ Sistema de animaciones activo');
+    }, 500);
 }
 
 function handleSectionEffects(section) {
     const id = section.id;
     
-    // Efecto especial: corazón
-    if (id === 'corazon' && !section.dataset.heartActive) {
-        section.dataset.heartActive = 'true';
-        // El corazón empieza a latir fuerte cuando aparece
-        setTimeout(() => {
-            const heart = document.getElementById('mainHeart');
-            if (heart) {
-                heart.style.animation = 'heartBeatReal 0.6s ease-in-out 3';
-            }
-        }, 1500);
+    if (id === 'cumple' && !section.dataset.effectsDone) {
+        section.dataset.effectsDone = 'true';
+        setTimeout(() => createBirthdayConfetti(), 500);
     }
     
-    // Efecto especial: cumpleaños
-    if (id === 'cumple' && !section.dataset.cakeActive) {
-        section.dataset.cakeActive = 'true';
-        createBirthdayConfetti();
-    }
-    
-    // Efecto especial: sorpresa
-    if (id === 'sorpresa' && !section.dataset.surpriseActive) {
-        section.dataset.surpriseActive = 'true';
-        setTimeout(() => createFireworks(), 1000);
+    if (id === 'sorpresa' && !section.dataset.effectsDone) {
+        section.dataset.effectsDone = 'true';
+        setTimeout(() => createFireworks(), 500);
     }
 }
 
 function createBirthdayConfetti() {
-    const colors = ['#ff6b9d', '#d4af37', '#c8a8e9', '#ffb3d1', '#e74c3c'];
+    const emojis = ['🎉', '🎊', '✨', '💖', '🎀', '🌸', '💕'];
     for (let i = 0; i < 30; i++) {
         setTimeout(() => {
             const confetti = document.createElement('div');
             confetti.className = 'click-effect';
-            confetti.textContent = ['🎉', '🎊', '✨', '💖', '🎀'][Math.floor(Math.random() * 5)];
+            confetti.textContent = emojis[Math.floor(Math.random() * emojis.length)];
             confetti.style.left = Math.random() * 100 + 'vw';
             confetti.style.top = '-30px';
             confetti.style.fontSize = '2rem';
@@ -446,31 +645,26 @@ function createBirthdayConfetti() {
     }
 }
 
-// Agregar animación de confetti
-const confettiStyle = document.createElement('style');
-confettiStyle.textContent = `
-@keyframes confettiFall {
-    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-    100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+// Agregar keyframes de confeti
+if (!document.getElementById('confettiStyle')) {
+    const confettiStyle = document.createElement('style');
+    confettiStyle.id = 'confettiStyle';
+    confettiStyle.textContent = `
+        @keyframes confettiFall {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+        }
+    `;
+    document.head.appendChild(confettiStyle);
 }
-`;
-document.head.appendChild(confettiStyle);
 
-// Parallax effect en el mouse
-document.addEventListener('mousemove', (e) => {
-    const x = (e.clientX / window.innerWidth - 0.5) * 20;
-    const y = (e.clientY / window.innerHeight - 0.5) * 20;
-    document.querySelectorAll('.light').forEach((l, i) => {
-        l.style.transform = `translate(${x * (i+1) * 0.4}px, ${y * (i+1) * 0.4}px)`;
-    });
-    document.querySelectorAll('[data-parallax]').forEach(el => {
-        const factor = parseFloat(el.dataset.parallax) || 0.3;
-        el.style.transform = `translate(${x * factor}px, ${y * factor}px)`;
-    });
-});
-
+// ============================================
 // INIT
+// ============================================
+
 function initAllSections() {
+    console.log('🚀 Iniciando todas las secciones...');
+    
     initHeartSection();
     initGallery();
     initLetter();
@@ -478,9 +672,13 @@ function initAllSections() {
     initConstellation();
     initFutureLetter();
     initPromesas();
-    initScrollAnimations(); // ⭐ Sistema de animaciones por scroll
     
-    setTimeout(() => { const al = document.querySelector('.nav-link.active'); if (al) updateNavIndicator(al); }, 100);
+    // ⭐ Las animaciones se inician DESPUÉS de que todo esté listo
+    setTimeout(() => {
+        initScrollAnimations();
+    }, 300);
 }
 
-window.addEventListener('load', () => { setTimeout(simulateLoader, 500); });
+window.addEventListener('load', () => { 
+    setTimeout(simulateLoader, 500); 
+});
