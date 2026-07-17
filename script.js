@@ -338,115 +338,190 @@ let gameActive = false;
 let gameScore = 0;
 let gameTime = 60;
 let gameItems = [];
-let gameAnimId;
+let gameAnimId = null;
 let highScore = parseInt(localStorage.getItem('kuromiHighScore') || '0');
+let gameCanvas = null;
+let gameCtx = null;
+let gameSpawnInterval = null;
 
 function initGame() {
     document.getElementById('highScore').textContent = highScore;
     document.getElementById('gameStartBtn').addEventListener('click', startGame);
     document.getElementById('gameRestartBtn').addEventListener('click', startGame);
+    
+    // Configurar canvas desde el inicio
+    gameCanvas = document.getElementById('gameCanvas');
+    gameCtx = gameCanvas.getContext('2d');
+    
+    // Click en canvas
+    gameCanvas.addEventListener('click', handleCanvasClick);
+    gameCanvas.addEventListener('touchstart', handleCanvasTouch);
 }
 
 function startGame() {
+    // Limpiar todo primero
+    if (gameAnimId) cancelAnimationFrame(gameAnimId);
+    if (gameSpawnInterval) clearInterval(gameSpawnInterval);
+    gameItems = [];
+    
     gameActive = true;
     gameScore = 0;
     gameTime = 60;
-    gameItems = [];
+    
     document.getElementById('score').textContent = '0';
     document.getElementById('timeLeft').textContent = '60';
     document.getElementById('gameStartBtn').style.display = 'none';
     document.getElementById('gameOverlay').classList.remove('active');
     document.getElementById('gameCanvas').classList.remove('hidden');
     
-    const canvas = document.getElementById('gameCanvas');
-    canvas.width = canvas.offsetWidth;
-    canvas.height = 500;
+    // Configurar tamaño del canvas
+    gameCanvas.width = gameCanvas.offsetWidth || 800;
+    gameCanvas.height = 500;
     
-    const ctx = canvas.getContext('2d');
-    spawnItems();
-    gameAnimId = requestAnimationFrame(() => gameLoop(ctx, canvas));
+    // Iniciar spawner de items
+    gameSpawnInterval = setInterval(spawnItem, 800);
+    
+    // Iniciar loop del juego
+    gameLoop();
+    
+    // Iniciar timer
     gameTimer();
 }
 
-function spawnItems() {
-    const canvas = document.getElementById('gameCanvas');
-    const types = ['rose', 'rose', 'rose', 'rose', 'kuromi', 'broken', 'clock', 'music'];
-    
-    setInterval(() => {
-        if (!gameActive) return;
-        const type = types[Math.floor(Math.random() * types.length)];
-        const item = {
-            x: Math.random() * (canvas.width - 40) + 20,
-            y: -30,
-            type: type,
-            speed: 2 + Math.random() * 2,
-            size: 35
-        };
-        gameItems.push(item);
-    }, 800);
+function spawnItem() {
+    if (!gameActive) return;
+    const types = ['rose', 'rose', 'rose', 'rose', 'rose', 'kuromi', 'broken', 'clock', 'music'];
+    const type = types[Math.floor(Math.random() * types.length)];
+    const item = {
+        x: Math.random() * (gameCanvas.width - 60) + 30,
+        y: -40,
+        type: type,
+        speed: 2 + Math.random() * 2,
+        size: 35
+    };
+    gameItems.push(item);
 }
 
-function gameLoop(ctx, canvas) {
+function gameLoop() {
     if (!gameActive) return;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
     
-    // Fondo
-    const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+    // Limpiar canvas
+    gameCtx.clearRect(0, 0, gameCanvas.width, gameCanvas.height);
+    
+    // Fondo degradado
+    const gradient = gameCtx.createLinearGradient(0, 0, 0, gameCanvas.height);
     gradient.addColorStop(0, '#1a0a2e');
+    gradient.addColorStop(0.5, '#2d1b3d');
     gradient.addColorStop(1, '#4a1942');
-    ctx.fillStyle = gradient;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    gameCtx.fillStyle = gradient;
+    gameCtx.fillRect(0, 0, gameCanvas.width, gameCanvas.height);
     
     // Estrellas de fondo
-    for (let i = 0; i < 30; i++) {
-        ctx.fillStyle = `rgba(255, 255, 255, ${Math.random() * 0.5})`;
-        ctx.fillRect(Math.random() * canvas.width, Math.random() * canvas.height, 2, 2);
+    for (let i = 0; i < 40; i++) {
+        const starX = (i * 97) % gameCanvas.width;
+        const starY = (i * 73) % gameCanvas.height;
+        gameCtx.fillStyle = `rgba(255, 255, 255, ${0.3 + Math.random() * 0.4})`;
+        gameCtx.beginPath();
+        gameCtx.arc(starX, starY, 1.5, 0, Math.PI * 2);
+        gameCtx.fill();
     }
     
-    // Items
-    const emojis = { rose: '🌹', kuromi: '🖤', broken: '💔', clock: '⏰', music: '🎵' };
-    gameItems.forEach((item, index) => {
-        item.y += item.speed;
-        ctx.font = `${item.size}px Arial`;
-        ctx.textAlign = 'center';
-        ctx.fillText(emojis[item.type], item.x, item.y);
-        
-        if (item.y > canvas.height + 30) {
-            gameItems.splice(index, 1);
-        }
-    });
+    // Dibujar items
+    const emojis = { 
+        rose: '🌹', 
+        kuromi: '🖤', 
+        broken: '💔', 
+        clock: '⏰', 
+        music: '🎵' 
+    };
     
-    gameAnimId = requestAnimationFrame(() => gameLoop(ctx, canvas));
+    for (let i = gameItems.length - 1; i >= 0; i--) {
+        const item = gameItems[i];
+        item.y += item.speed;
+        
+        // Dibujar emoji
+        gameCtx.font = `${item.size}px Arial`;
+        gameCtx.textAlign = 'center';
+        gameCtx.textBaseline = 'middle';
+        gameCtx.fillText(emojis[item.type], item.x, item.y);
+        
+        // Eliminar si sale de la pantalla
+        if (item.y > gameCanvas.height + 40) {
+            gameItems.splice(i, 1);
+        }
+    }
+    
+    // Siguiente frame
+    gameAnimId = requestAnimationFrame(gameLoop);
 }
 
-// Click en canvas
-document.addEventListener('DOMContentLoaded', () => {
-    const canvas = document.getElementById('gameCanvas');
-    canvas.addEventListener('click', (e) => {
-        if (!gameActive) return;
-        const rect = canvas.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        gameItems.forEach((item, index) => {
-            const dx = x - item.x;
-            const dy = y - item.y;
-            const dist = Math.sqrt(dx*dx + dy*dy);
-            if (dist < 30) {
-                handleItemClick(item.type, x, y);
-                gameItems.splice(index, 1);
-            }
-        });
-    });
-});
+function handleCanvasClick(e) {
+    if (!gameActive) return;
+    const rect = gameCanvas.getBoundingClientRect();
+    const scaleX = gameCanvas.width / rect.width;
+    const scaleY = gameCanvas.height / rect.height;
+    const x = (e.clientX - rect.left) * scaleX;
+    const y = (e.clientY - rect.top) * scaleY;
+    checkItemHit(x, y);
+}
+
+function handleCanvasTouch(e) {
+    if (!gameActive) return;
+    e.preventDefault();
+    const rect = gameCanvas.getBoundingClientRect();
+    const scaleX = gameCanvas.width / rect.width;
+    const scaleY = gameCanvas.height / rect.height;
+    const touch = e.touches[0];
+    const x = (touch.clientX - rect.left) * scaleX;
+    const y = (touch.clientY - rect.top) * scaleY;
+    checkItemHit(x, y);
+}
+
+function checkItemHit(x, y) {
+    for (let i = gameItems.length - 1; i >= 0; i--) {
+        const item = gameItems[i];
+        const dx = x - item.x;
+        const dy = y - item.y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < 35) {
+            handleItemClick(item.type, x, y);
+            // Efecto visual
+            createClickEffect(x / (gameCanvas.width / gameCanvas.offsetWidth), y / (gameCanvas.height / gameCanvas.offsetHeight));
+            gameItems.splice(i, 1);
+        }
+    }
+}
+
+function createClickEffect(x, y) {
+    const effect = document.createElement('div');
+    effect.className = 'click-effect';
+    effect.textContent = '✨';
+    const rect = gameCanvas.getBoundingClientRect();
+    effect.style.position = 'absolute';
+    effect.style.left = (rect.left + x) + 'px';
+    effect.style.top = (rect.top + y) + 'px';
+    effect.style.color = '#ff6b9d';
+    document.body.appendChild(effect);
+    setTimeout(() => effect.remove(), 1000);
+}
 
 function handleItemClick(type, x, y) {
     switch(type) {
-        case 'rose': gameScore += 1; break;
-        case 'kuromi': gameScore += 5; break;
-        case 'broken': gameScore = Math.max(0, gameScore - 3); break;
-        case 'clock': gameTime += 5; break;
-        case 'music': if(audio.volume < 1) audio.volume = Math.min(1, audio.volume + 0.1); break;
+        case 'rose': 
+            gameScore += 1; 
+            break;
+        case 'kuromi': 
+            gameScore += 5; 
+            break;
+        case 'broken': 
+            gameScore = Math.max(0, gameScore - 3); 
+            break;
+        case 'clock': 
+            gameTime += 5; 
+            break;
+        case 'music': 
+            if (audio.volume < 1) audio.volume = Math.min(1, audio.volume + 0.1); 
+            break;
     }
     document.getElementById('score').textContent = gameScore;
 }
@@ -456,13 +531,17 @@ function gameTimer() {
         if (!gameActive) { clearInterval(interval); return; }
         gameTime--;
         document.getElementById('timeLeft').textContent = gameTime;
-        if (gameTime <= 0) endGame();
+        if (gameTime <= 0) {
+            clearInterval(interval);
+            endGame();
+        }
     }, 1000);
 }
 
 function endGame() {
     gameActive = false;
-    cancelAnimationFrame(gameAnimId);
+    if (gameAnimId) cancelAnimationFrame(gameAnimId);
+    if (gameSpawnInterval) clearInterval(gameSpawnInterval);
     
     if (gameScore > highScore) {
         highScore = gameScore;
