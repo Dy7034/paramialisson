@@ -153,32 +153,30 @@
             <h2 class="section-title animated-gradient">Nuestro Corazón</h2>
             <p class="section-subtitle">El latido que nos mantiene vivos</p>
             <div class="heart-container" id="heartContainer">
-                <div class="ecg-line">
-                    <svg viewBox="0 0 200 50" preserveAspectRatio="none">
-                        <polyline id="ecgPath" points="0,25 50,25 60,10 70,40 80,5 90,45 100,25 150,25 160,15 170,35 180,25 200,25" 
-                                  fill="none" stroke="#ff6b9d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <div class="heart-main" id="mainHeart">
-                    <svg viewBox="0 0 32 29.6" id="heartSvg">
-                        <defs>
-                            <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" id="grad1" stop-color="#ff6b9d"/>
-                                <stop offset="50%" id="grad2" stop-color="#e74c3c"/>
-                                <stop offset="100%" id="grad3" stop-color="#ff6b9d"/>
-                            </linearGradient>
-                            <filter id="glow">
-                                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                                <feMerge>
-                                    <feMergeNode in="coloredBlur"/>
-                                    <feMergeNode in="SourceGraphic"/>
-                                </feMerge>
-                            </filter>
-                        </defs>
-                        <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4 c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" 
-                              fill="url(#heartGradient)" filter="url(#glow)"/>
-                    </svg>
-                </div>
+    <div class="heart-main" id="mainHeart">
+        <svg viewBox="0 0 32 29.6" id="heartSvg">
+            <defs>
+                <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" id="grad1" stop-color="#ff6b9d"/>
+                    <stop offset="50%" id="grad2" stop-color="#e74c3c"/>
+                    <stop offset="100%" id="grad3" stop-color="#ff6b9d"/>
+                </linearGradient>
+                <filter id="glow">
+                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                    <feMerge>
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
+            </defs>
+            <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4 c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" 
+                  fill="url(#heartGradient)" filter="url(#glow)"/>
+        </svg>
+    </div>
+    <div class="heart-particles" id="heartParticles"></div>
+    <div class="heart-rings" id="heartRings"></div>
+</div>
+
                 <div class="heart-particles" id="heartParticles"></div>
             </div>
             <p class="heart-message">Este corazón late por ti, Alisson. Solo por ti. 💖</p>
